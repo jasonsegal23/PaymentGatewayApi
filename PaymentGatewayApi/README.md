@@ -1,5 +1,10 @@
 # PaymentGatewayApi
 
+## Useful Links
+
+*Postman Collection*
+https://www.getpostman.com/collections/be3bf155f3fbf432e405
+
 ## Local Setup
 
 ### Running in Local
