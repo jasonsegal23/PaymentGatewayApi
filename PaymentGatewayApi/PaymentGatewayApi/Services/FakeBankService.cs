@@ -1,7 +1,9 @@
 ﻿using PaymentGateway.Commands;
 using PaymentGateway.Responses;
 using PaymentGateway.Services.Interfaces;
+using PaymentGateway.Validators;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace PaymentGateway.Services
@@ -50,8 +52,9 @@ namespace PaymentGateway.Services
                 {
                     BankPaymentId = id,
                     Status = "failure",
-                    Reason = "Failed to verify client funds"
-                });
+                    Reason = "Failed to verify client funds",
+                    ValidationErrors = new List<ValidationError>()
+                }); ;
             }
 
             // Merchant Money Processing
@@ -63,14 +66,16 @@ namespace PaymentGateway.Services
                 {
                     BankPaymentId = id,
                     Status = "failure",
-                    Reason = "Failed to process funds with merchant"
+                    Reason = "Failed to process funds with merchant",
+                    ValidationErrors = new List<ValidationError>()
                 });
             }
 
             return Task.FromResult(new PaymentResponse
             {
                 BankPaymentId = id,
-                Status = "success"
+                Status = "success",
+                ValidationErrors = new List<ValidationError>()
             });
 
         }
