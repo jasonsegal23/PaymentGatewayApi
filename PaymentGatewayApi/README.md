@@ -2,7 +2,7 @@
 
 ## Useful Links
 
-**Postman Collection** - https://www.getpostman.com/collections/be3bf155f3fbf432e405
+**Postman Collection** - https://app.getpostman.com/join-team?invite_code=21bd64f8dbec0bd0d0cfd954b0aace34&ws=ae4ea056-77c7-48c2-a9a2-dc4c2eac7d18
 
 ## Local Setup
 
