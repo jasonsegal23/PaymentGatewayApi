@@ -18,3 +18,5 @@
 ## Areas of Improvement
 * Requires a CHA/CHP certificate as opposed to a dev certificate
 * Should add API Authentication with granular permissions (IdentityService or OpenIdConnect)
+* Store card details in a separate encrypted DB
+* Caching for quicker data access
