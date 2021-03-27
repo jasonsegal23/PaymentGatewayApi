@@ -1,6 +1,8 @@
 # PaymentGatewayApi
 
-## Running in Local
+## Local Setup
+
+### Running in Local
 
 Pre-requisites:
 * MongoDB
@@ -15,7 +17,7 @@ Steps (Visual Studio):
 * Change launch profile to 'PaymentGatewayApi' (not IIS)
 * Run the application
 
-## Running in Docker
+### Running in Docker
 
 Pre-requisites:
 * Docker-Desktop
