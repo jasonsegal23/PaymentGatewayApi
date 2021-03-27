@@ -30,7 +30,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0-alpine
 WORKDIR /app
 COPY --from=build-env /app/out .
 
-COPY cert.pfx cert.pfx
+COPY /PaymentGatewayApi/cert.pfx cert.pfx
 
 RUN update-ca-certificates
 
