@@ -1,0 +1,33 @@
+version: '2.1'
+services: 
+  payment-gateway-mongo:
+    image: "mongo"
+    ports:
+      - "27017:27017"
+    volumes:
+      - /etc/payment-gateway-mongo/db:/data/db
+    networks:
+      - internal
+    restart: unless-stopped
+
+  payment-gateway-api:
+    build: 
+        context: .
+    ports:
+      - "5001:5001"
+    environment:
+      - ASPNETCORE__ENVIRONMENT=Development
+      - ASPNETCORE__HTTPS__PORT=5001
+      - ASPNETCORE__URLS=https://+;http://+
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/cert.pfx
+      - PAYMENTSDATABASECONFIG__CONNECTIONSTRING=mongodb://payment-gateway-mongo:27017
+    depends_on: 
+      - payment-gateway-mongo
+    networks:
+      - internal
+    restart: unless-stopped
+
+networks:
+  internal:
+    driver: bridge

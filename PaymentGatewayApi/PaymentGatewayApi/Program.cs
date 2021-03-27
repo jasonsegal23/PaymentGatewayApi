@@ -18,7 +18,7 @@ namespace PaymentGateway
                     {
                         o.ListenAnyIP(
                             5001,
-                            listenOptions => listenOptions.UseHttps("payment-gateway.pfx"));
+                            listenOptions => listenOptions.UseHttps("cert.pfx", "password"));
                     });
 
                     webBuilder.UseStartup<Startup>();
