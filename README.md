@@ -13,6 +13,7 @@
 * Built a fake bank (can be switched out by configuration)
 * Built Nunit test solution with unit tests (not full coverage as time-permitting)
 * Running on HTTPS with .NET dev certificate (adds encryption)
+* Console application logging using Serilogger in JSON for consumption (possibly ELK or Grafana) 
 * Dockerized the application (running on HTTPS and exposed on localhost:5001)
 
 ## Areas of Improvement
